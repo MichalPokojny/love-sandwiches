@@ -12,6 +12,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('love_sandwiches')
 
+
 def get_sales_data():
     """.
     Get sales figures input from the user
@@ -32,6 +33,7 @@ def get_sales_data():
             break
     return sales_data
 
+
 def validate_data(values):
     """
     Inside the try, converts all string values into integers.
@@ -48,5 +50,6 @@ def validate_data(values):
         print(f"Invalid data: {e}, please try again. \n")
         return False
     return True
+
 
 data = get_sales_data()
